@@ -19,9 +19,9 @@ Github 为广大用户提供了一个Github pages的功能，可以用于免费�
  Jekyll是一个简单的免费的Blog生成工具,我们可以在网上找到一些现有的Jekyll模板并且在其基础上进行修改来实现自己的需求。
  首先将自己的项目克隆到本地,然后将网上下载的Jekyll模板解压到含有.git这个文件夹的文件夹下（.git可能会被隐藏显示）。一般来说博客文件夹的目录结构就会如下所示：
  ![image02](/assets/img/jekyll_file_directory.png)
- 其中_posts文件夹中放一些自己要写的博客markdown文件，这些markdown文件应该命名为"YYYY-mm-dd-filename.markdown",如图所示:
+ 其中"post"文件夹中放一些自己要写的博客markdown文件，这些markdown文件应该命名为"YYYY-mm-dd-filename.markdown",如图所示:
  ![image03](/assets/img/_post_structure.png)
-  另一个重要的文件是config.yml文件，其中包含了一些对于博客的配置信息，一些模板中会有title,email,description,github等选项，按照个人的需求进行填写。官方yml文件的配置说明请戳 <http://jekyllcn.com/docs/configuration/>
+ 另一个重要的文件是config.yml文件，其中包含了一些对于博客的配置信息，一些模板中会有title,email,description,github等选项，按照个人的需求进行填写。官方yml文件的配置说明请戳 <http://jekyllcn.com/docs/configuration/>
  1. 结果展示
  在浏览器中输入 https://yourusername.github.io/ 就可以浏览配置好的主页，这是我利用一个模板建立的主页(<https://github.com/P233/3-Jekyll>):
   ![image04](/assets/img/homepage.png)
