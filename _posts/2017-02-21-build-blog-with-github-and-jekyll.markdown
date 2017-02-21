@@ -10,6 +10,6 @@ Github 为广大用户提供了一个Github pages的功能，可以用于免费�
 
  1. 在Github 上建立新的项目
  在自己github的主页上点击 "New Respository" ,进入项目初始化配置界面:
- ![image01](my_pics/github_create_respositoty.png)
+ ![image01](github_create_respositoty.png)
  1. 这是第二个
  1. 这是第三个
