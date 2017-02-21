@@ -11,5 +11,9 @@ Github 为广大用户提供了一个Github pages的功能，可以用于免费�
  1. 在Github 上建立新的项目
  在自己github的主页上点击 "New Respository" ,进入项目初始化配置界面:
  ![image01](/assets/img/github_create_respositoty.png)
+ 其中在Repository name 这一栏填上 xxxx(你的用户名).guthub.io。
+ Description 可以填一些博客的基本介绍信息。
+ 选择项目为公开"Public", 最好勾选"Initialize this repository with a README"。
+ 最后单击最下面的Create Respositoty.
  1. 这是第二个
  1. 这是第三个
