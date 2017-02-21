@@ -2,8 +2,8 @@
 layout: post
 title:  "Leetcode: 2 sum"
 date:   2017-02-21
-categories: leetcode c++ 
-tags: leetcode c++ 
+categories: leetcode cpp 
+tags: leetcode cpp
 ---
 
 ### Leetcode: 2 sum
