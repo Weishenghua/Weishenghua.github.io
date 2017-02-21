@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "Leetcode: 2 sum"
+date:   2017-02-21
+categories: c++ leetcode
+tags: c++ leetcode
+---
+
 ### Leetcode: 2 sum
 ## 题目要求：
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
@@ -9,7 +17,7 @@ return [0, 1].
 ## 分析：
 题目要求在一个数组中找出两个数，这两个数的和等于一个指定的数target.使用简单的思路可以达到o(n^2)的复杂度。如果将原来的数组进行排序，使用一对左右游标从数组的两侧从中间滑动，当当前两个数之和大于target时，右游标往左滑动，当两个数之和大于target时，左游标往右滑动，最终可以得到结果。并且可以证明左右游标的这种滑动方式是不会错过正确结果的。
 ## Code:
-{% highlight bash lineno %}
+{% highlight c++ %}
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
