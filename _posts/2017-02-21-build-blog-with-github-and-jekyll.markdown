@@ -15,5 +15,8 @@ Github 为广大用户提供了一个Github pages的功能，可以用于免费�
  Description 可以填一些博客的基本介绍信息。
  选择项目为公开"Public", 最好勾选"Initialize this repository with a README"。
  最后单击最下面的Create Respositoty.
- 1. 这是第二个
+ 1. 利用Jekyll模板
+ Jekyll是一个简单的免费的Blog生成工具,我们可以在网上找到一些现有的Jekyll模板并且在其基础上进行修改来实现自己的需求。
+ 首先将自己的项目克隆到本地
+ 
  1. 这是第三个
