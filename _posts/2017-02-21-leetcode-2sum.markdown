@@ -17,7 +17,7 @@ return [0, 1].
 ## 分析：
 题目要求在一个数组中找出两个数，这两个数的和等于一个指定的数target.使用简单的思路可以达到o(n^2)的复杂度。如果将原来的数组进行排序，使用一对左右游标从数组的两侧从中间滑动，当当前两个数之和大于target时，右游标往左滑动，当两个数之和大于target时，左游标往右滑动，最终可以得到结果。并且可以证明左右游标的这种滑动方式是不会错过正确结果的。
 ## Code:
-{% highlight c++ %}
+{% highlight c++ lineno %}
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -69,7 +69,7 @@ public:
 对于两个数字求和的问题，还可以将每一个数字存储到hashtable中，然后遍历整个数组，查找hashtable 中是否包含 target - current_num这个数，每一次查询只需要O(1)的时间复杂度，总的时间复杂度为O(N).不过由于使用了hashtable，增加了额外的空间。
 
 ## Code:
-{% highlight c++ %}
+{% highlight c++ lineno %}
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
