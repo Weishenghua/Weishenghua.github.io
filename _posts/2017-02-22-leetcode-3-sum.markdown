@@ -1,103 +1,86 @@
 ---
 layout: post
-title:  "Leetcode: 2 sum"
-date:   2017-02-21
+title:  "Leetcode: 3 sum"
+date:   2017-02-22
 categories: leetcode cpp 
 tags: leetcode cpp
 ---
 
-### Leetcode: 2 sum
+### Leetcode: 3 sum
 ## 题目要求：
-Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
+Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+
+Note: The solution set must not contain duplicate triplets.
 ## Example:
-Given nums = [2, 7, 11, 15], target = 9,
-Because nums[0] + nums[1] = 2 + 7 = 9,
-return [0, 1].
+For example, given array S = [-1, 0, 1, 2, -1, -4],
+A solution set is:
+[
+  [-1, 0, 1],
+  [-1, -1, 2]
+]
 ## 分析：
-题目要求在一个数组中找出两个数，这两个数的和等于一个指定的数target.使用简单的思路可以达到o(n^2)的复杂度。如果将原来的数组进行排序，使用一对左右游标从数组的两侧从中间滑动，当当前两个数之和大于target时，右游标往左滑动，当两个数之和大于target时，左游标往右滑动，最终可以得到结果。并且可以证明左右游标的这种滑动方式是不会错过正确结果的。
+题目要求在一个数组中找出a+b+c=0的三个数，并且要求a,b,c组成不重复的三元组。类似于2 sum问题，首先对于数组整体进行排序，然后遍历整个数组，在每次迭代时固定num1，令 target = 0-num1,然后在其他的数字中寻找num2+num3=target的组合，这部分可以参照2 sum问题。其中比较困难的一点就是要保证三元组的不重复性，解决的方案就是不论对于num1,num2或者num3,保证在迭代中下一个取值要和上一个取值不一样即可。算法的时间复杂度为O(N^2).
 ## Code:
 {% highlight c++ lineno %}
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        // new o(n) method
-        vector<int> res;
-        if(nums.size()==0)
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        vector<vector<int>> res;
+        if (nums.size()==0)
         {
             return res;
         }
-        
-        vector<int>  idx(nums.size());
-        for (int i = 0; i < idx.size(); i++) 
-        {
-            idx[i] = i;
-        }
-         // sort indexes based on comparing values in v
-        sort(idx.begin(), idx.end(),[&nums](int i1, int i2) {return nums[i1] < nums[i2];});
-         // sort original nums array
         sort(nums.begin(),nums.end());
-        
-        int left = 0;
-        int right = nums.size()-1;
-        while(left!=right)
+        for (int i =0; i<nums.size(); i++)
         {
-            if(nums[left]+nums[right]>target)
-            {
-                right--;
-            }
-            else
-            {   if(nums[left]+nums[right]<target)
+            int left = i+1;
+            int right = nums.size()-1;
+            int target = 0 - nums[i];
+
+               while(left<right)
+                {
+                    if(nums[left]+nums[right]<target)
                     {
                         left++;
                     }
-                else
-                {
-                    res.push_back(idx[left]);
-                    res.push_back(idx[right]);
-                    return res;
+                    else
+                    {
+                        if(nums[left]+nums[right]>target)
+                        {
+                            right--;
+                        }
+                        else
+                        {
+
+                            vector<int> input;
+                            input.push_back(nums[i]);
+                            input.push_back(nums[left]);
+                            input.push_back(nums[right]);
+                            res.push_back(input);
+                            //remove duplicate left
+                            while(left<right&&nums[left]==input[1]) 
+                            {
+                                left++;
+                            }
+                            //remove duplicate right
+                            while(left<right&&nums[left]==input[2]) 
+                            {
+                                right--;
+                            }
+                        }
+                                        
+                    }
+                    
                 }
-            }
-            
-        }
-        
-    }
-};
-{% endhighlight %}
-
-## 另一种思路：
-对于两个数字求和的问题，还可以将每一个数字存储到hashtable中，然后遍历整个数组，查找hashtable 中是否包含 target - current_num这个数，每一次查询只需要O(1)的时间复杂度，总的时间复杂度为O(N).不过由于使用了hashtable，增加了额外的空间。
-
-## Code:
-{% highlight c++ lineno %}
-class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        // hashmap version
-        vector<int> res;
-        if(nums.size()==0)
-        {
-            return res;
-        }
-        unordered_map<int, int> IntHash;
-        for (int i=0; i<nums.size();i++)
-        {
-            IntHash[nums[i]] = i;
-        }
-        for (int i=0; i<nums.size();i++)
-        {
-            int complement = target - nums[i];
-            if(IntHash.find(complement) != IntHash.end())
+          //remove duplicate i
+           while (i + 1 < nums.size() && nums[i + 1] == nums[i]) 
             {
-                if(i!=IntHash[complement])
-                {
-                    res.push_back(i);
-                    res.push_back(IntHash[complement]);
-                    return res;
-                }
+                i++;
             }
+        
         }
         return res;
     }
 };
 {% endhighlight %}
+
