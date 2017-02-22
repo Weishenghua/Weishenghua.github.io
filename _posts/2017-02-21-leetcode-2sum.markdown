@@ -64,3 +64,5 @@ public:
     }
 };
 {% endhighlight %}
+## 另一种思路：
+对于两个数字求和的问题，还可以将每一个数字存储到hashtable中，然后遍历整个数组，查找hashtable 中是否包含 target - current_num这个数字，每一次查询只需要O(1)的时间复杂度，总的时间复杂度为O(N).不过由于使用了hashtable，增加了额外的空间。
