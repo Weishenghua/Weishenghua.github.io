@@ -14,7 +14,7 @@ Note: You may not slant the container and n is at least 2.
 ## 分析：
 这道题目的要求寻找最大的容器的容积是多少。首先设置左右两个游标，从最左边和最右边分别开始向中间滑动，当前的容器容积由容器的宽 right-left 和 容器的高度
 min(height[left],height[right])决定，计算出当前容器的容积；在后续游标滑动的过程中，由于两个游标都往中间滑动，所以容器的宽必然会减少，所以在分别滑动左右游标的同时，游标要一直滑动到比当前的
-min(height[left],height[right])还要大的时候再停止，重新计算容器的容积，这样的容器容积才有可能会比之前最大的容器容积大
+min(height[left],height[right])还要大的时候再停止，重新计算容器的容积，这样的容器容积才有可能会比之前最大的容器容积大.最终的时间复杂度为O(N)。
 ## Code:
 {% highlight c++ lineno %}
 class Solution {
