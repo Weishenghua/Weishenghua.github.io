@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Product of Array Except Self"
+title:  "Leetcode: Product of Array Except Self"
 date:   2017-02-24
 categories: leetcode cpp 
 tags: leetcode cpp
