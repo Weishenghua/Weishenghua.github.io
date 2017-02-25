@@ -20,7 +20,7 @@ tags: machine_learning
  ![mars_tianchi_user_actions](/assets/img/mars_tianchi_user_actions.png)
  用户行为主要包含的是用户的行为信息，表示摸一个用户在某一时刻对于某一首歌进行了什么样的操作(1，播放；2，下载，3，收藏).
  歌曲艺人表如下:
-  ![mars_tianchi_songs](/assets/img/mars_tianchi_songs.png)
+ ![mars_tianchi_songs](/assets/img/mars_tianchi_songs.png)
  这张表对应了歌曲和艺人之间的对应关系，这样就可以把上张表中对于歌的操作统计，计算出不同歌手在不同的时间段
  被多少人进行了什么样的操作。
  要提交的结果表的样子如下：
