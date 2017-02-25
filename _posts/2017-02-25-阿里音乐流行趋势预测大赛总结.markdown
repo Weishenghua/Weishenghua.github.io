@@ -26,7 +26,7 @@ tags: machine_learning
 要提交的结果表的样子如下：<br>
 ![mars_tianchi_artist_plays_predict](/assets/img/tianchi_music/mars_tianchi_artist_plays_predict.png)<br>
 即每一个歌手在未来一个时间段内每一天内的播放数据。<br>
-将几个具有代表性的歌手播放的历史数据绘制出来如下：
+将几个具有代表性的歌手播放的历史数据绘制出来如下：<br>
 ![singer1_history](/assets/img/tianchi_music/singer1_history.jpg)<br>
 ![singer2_history](/assets/img/tianchi_music/singer2_history.jpg)<br>
 ![singer3_history](/assets/img/tianchi_music/singer3_history.jpg)<br>
