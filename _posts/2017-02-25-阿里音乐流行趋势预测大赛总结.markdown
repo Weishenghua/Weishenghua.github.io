@@ -17,16 +17,20 @@ tags: machine_learning
 预测，挖掘出即将成为潮流的艺人，从而实现对一个时间段内音乐流行趋势的准确把控。<br>
 其中提供了两张表作为已知数据，分别是用户的行为表(mars_tianchi_user_actions)和歌曲艺人表(mars_tianchi_songs),其
 中用户行为表如下:<br>
-![mars_tianchi_user_actions](/assets/img/mars_tianchi_user_actions.png)<br>
- 用户行为主要包含的是用户的行为信息，表示摸一个用户在某一时刻对于某一首歌进行了什么样的操作(1，播放；2，下载，3，收藏).
- 歌曲艺人表如下:<br>
- ![mars_tianchi_songs](/assets/img/mars_tianchi_songs.png)<br>
- 这张表对应了歌曲和艺人之间的对应关系，这样就可以把上张表中对于歌的操作统计，计算出不同歌手在不同的时间段
- 被多少人进行了什么样的操作。
- 要提交的结果表的样子如下：<br>
- ![mars_tianchi_artist_plays_predict](/assets/img/mars_tianchi_artist_plays_predict.png)<br>
- 即每一个歌手在未来一个时间段内每一天内的播放数据。
- ## 歌手的播放曲线
+![mars_tianchi_user_actions](/assets/img/tianchi_music/mars_tianchi_user_actions.png)<br>
+用户行为主要包含的是用户的行为信息，表示摸一个用户在某一时刻对于某一首歌进行了什么样的操作(1，播放；2，下载，3，收藏).
+歌曲艺人表如下:<br>
+![mars_tianchi_songs](/assets/img/tianchi_music/mars_tianchi_songs.png)<br>
+这张表对应了歌曲和艺人之间的对应关系，这样就可以把上张表中对于歌的操作统计，计算出不同歌手在不同的时间段
+被多少人进行了什么样的操作。
+要提交的结果表的样子如下：<br>
+![mars_tianchi_artist_plays_predict](/assets/img/tianchi_music/mars_tianchi_artist_plays_predict.png)<br>
+即每一个歌手在未来一个时间段内每一天内的播放数据。<br>
+将几个具有代表性的歌手播放的历史数据绘制出来如下：
+![singer1_history](/assets/img/tianchi_music/singer1_history.png)<br>
+![singer2_history](/assets/img/tianchi_music/singer2_history.png)<br>
+![singer3_history](/assets/img/tianchi_music/singer3_history.png)<br>
+## 歌手的播放曲线
 总体来说这次比赛做的并不是很好，第一个赛季和第二个赛季的成绩都在200~300名左右，主要存在的问题是：
 *   对于实际的数据没有处理的经验，在数据的预处理方面做的不好;
 *   对于要解决的问题定位不是很准确，没有对于目标函数和实际的场景进行深入的思考;
