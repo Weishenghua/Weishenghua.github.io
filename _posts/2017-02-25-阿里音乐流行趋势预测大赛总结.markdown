@@ -16,7 +16,7 @@ tags: machine_learning
 阿里音乐提供了阿里音乐用户在历史一段时间内的历史播放数据为基础，期望参赛者可以通过对于阿里音乐平台上每个阶段一人的试听量进行
 预测，挖掘出即将成为潮流的艺人，从而实现对一个时间段内音乐流行趋势的准确把控。<br>
 其中提供了两张表作为已知数据，分别是用户的行为表(mars_tianchi_user_actions)和歌曲艺人表(mars_tianchi_songs),其
-中用户行为表如下:
+中用户行为表如下:<br>
 ![mars_tianchi_user_actions](/assets/img/mars_tianchi_user_actions.png)<br>
  用户行为主要包含的是用户的行为信息，表示摸一个用户在某一时刻对于某一首歌进行了什么样的操作(1，播放；2，下载，3，收藏).
  歌曲艺人表如下:<br>
