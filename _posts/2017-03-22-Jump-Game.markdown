@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "Leetcode: Jump Game"
+date:   2017-03-22
+categories: leetcode cpp 
+tags: leetcode cpp
+---
+
+### Leetcode: Jump Game
+## 题目要求：
+Given an array of non-negative integers, you are initially positioned at the first index of the array.
+
+Each element in the array represents your maximum jump length at that position.
+
+Determine if you are able to reach the last index.
+
+For example:
+A = [2,3,1,1,4], return true.
+A = [3,2,1,0,4], return false.
+
+## 分析：
+（1）这个问题可以采用从后往前推的公式来进行推算，对于index i 来说，它是否能到达最后一个index取决于它的可及范围内的index 是否能够到达最后一个 index。但是这个问题存在于在index i 时，搜索其可见范围仍然需要O(N)的复杂度，整体需要O(N*N)的复杂度。
+ (2)对于这个问题有另一种思考就是要使index i 可达，则所有小于i的index都必须可达，这是充要条件。那么就可以从前往后来循环，判断当前的索引是否可达。如果递推下去最终index= array size -1 可达的话就返回 true。``
+## Code:
+```
+class Solution {
+public:
+    bool canJump(vector<int>& nums) { 
+
+        vector<bool> jump(nums.size(),false);
+        if(jump.size()!=0)
+        {
+            jump[nums.size()-1] = true;
+        }
+        for(int i = nums.size()-1; i >=0; i--)
+        {
+            int max_step = nums[i];
+            for(int j = i+1; j<nums.size() && j<= i+max_step; j++)
+            {
+                if(jump[j] == true)
+                {
+                    jump[i] = true;
+                    break;
+                }
+            }
+        }
+        if(jump.size()!=0)
+        {
+            return jump[0];
+        }
+        return false;
+    }
+	bool canJump(vector<int>& nums) {  
+    int reach = 0;
+    for(int i = 0; i < nums.size(); i++)
+    {
+        if(reach<i) return false;
+        reach = max(reach,nums[i]+i);
+    }
+    if(reach>=nums.size()-1)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+	} 
+    };
+
+```
